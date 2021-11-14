@@ -1,12 +1,9 @@
-import glob
 import importlib
 import inspect
 import itertools
-import os
-import sys
 from pathlib import Path
 
-from test_animator import TestAnimator
+from tree_animator import TreeAnimator
 
 
 def get_inheritors(klass, search_dir):
@@ -26,7 +23,7 @@ def get_inheritors(klass, search_dir):
     return subclasses
 
 if __name__ == "__main__":
-    animation_classes = get_inheritors(TestAnimator, "animations")
+    animation_classes = get_inheritors(TreeAnimator, "animations")
 
     coords_path = "./data/coords.csv"
     animation_duration = 5

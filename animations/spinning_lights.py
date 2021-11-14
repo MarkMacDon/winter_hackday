@@ -3,11 +3,11 @@ from datetime import datetime
 
 import numpy as np
 
-from test_animator import TestAnimator
+from tree_animator import TreeAnimator
 from utils.color import hsv_to_rgb
 
 
-class RotatingPlaneExample(TestAnimator):
+class RotatingPlaneExample(TreeAnimator):
     def initialize_animation(self):
         self.angle = 0
 

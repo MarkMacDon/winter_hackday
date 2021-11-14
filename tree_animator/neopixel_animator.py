@@ -5,7 +5,7 @@ import numpy as np
 import neopixel
 import board
 
-from animator import LightsAnimator
+from tree_animator.animator import LightsAnimator
 
 pixel_pin = board.D18
 ORDER = neopixel.RGB

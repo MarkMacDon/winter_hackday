@@ -1,13 +1,11 @@
-import math
 from datetime import datetime
 
 import numpy as np
 
-from test_animator import TestAnimator
-from utils.color import hsv_to_rgb
+from tree_animator import TreeAnimator
 
 
-class CenterExplodingExample(TestAnimator):
+class CenterExplodingExample(TreeAnimator):
     def initialize_animation(self):
         self.explode_distance = 0.01
 
