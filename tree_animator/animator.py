@@ -4,7 +4,7 @@ from datetime import datetime
 import numpy as np
 
 class LightsAnimator():
-    def __init__(self, coords_path, brightness=1, num_pixels=500):
+    def __init__(self, coords_path):
         self._coords = []
         # read in the coordinates file
         with open(coords_path) as f:
@@ -66,5 +66,4 @@ class LightsAnimator():
         pass
 
     def calculate_colors(self, xyz_coords, start_time):
-        # default method to just return black pixels
-        return np.zeros((self.NUM_LIGHTS, 3), dtype=np.uint8)
+        raise NotImplementedError("Looks like you are using the base animator class, make sure to override the calculate_colors method in your extension")
