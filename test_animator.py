@@ -30,4 +30,4 @@ class TestAnimator(LightsAnimator):
         plt.pause(1/60.0)
 
     def finalize_animation(self):
-        plt.show()
+        plt.close()
