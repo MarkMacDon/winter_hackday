@@ -27,7 +27,7 @@ class TestAnimator(LightsAnimator):
         self.plot_data.set_color(colors/255.0)
 
         # render the update to the matplotlib window
-        plt.pause(0.001)
+        plt.pause(1/60.0)
 
     def finalize_animation(self):
         plt.show()

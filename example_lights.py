@@ -4,6 +4,7 @@ from datetime import datetime
 import numpy as np
 
 from test_animator import TestAnimator
+from utils.color import hsv_to_rgb
 
 
 class RotatingPlaneExample(TestAnimator):
@@ -41,6 +42,13 @@ class RotatingPlaneExample(TestAnimator):
         # rotates 5 radians per second
         num_seconds_since_start = (datetime.now() - start_time).total_seconds()
         self.angle = num_seconds_since_start * 5
+
+        # change the colors of A and B so that they change over time
+        # 1 second is 10 degrees around the color wheel
+        # color B is 180 degrees out of phase with color A
+        hue_degrees = num_seconds_since_start * 10
+        self.color_A = hsv_to_rgb(hue_degrees, 1, 1)
+        self.color_B = hsv_to_rgb(hue_degrees + 180, 1, 1)
 
         return colors
 

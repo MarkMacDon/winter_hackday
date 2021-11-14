@@ -7,8 +7,10 @@ import requests
 pixel_pin = board.D18
 ORDER = neopixel.RGB
 
-num_pixels = 150
+num_pixels = 500
+# we use an app, ipwebcam, on a phone to get the image of each light
 camera_url = "http://192.168.1.71:8080/photo.jpg"
+
 
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.1, auto_write=False, pixel_order=ORDER
@@ -28,7 +30,7 @@ def take_image(filename):
 if __name__ == "__main__":
     pixels.fill((0,0,0))
     pixels.show()
-    take_image("./data/background.jpg")
+    take_image("../data/background.jpg")
 
     for i in range(num_pixels):
         pixels.fill((0,0,0))
@@ -41,7 +43,7 @@ if __name__ == "__main__":
     for i in range(10):
         pixels.fill((255,0,0))
         pixels.show()
-        time.sleep(0.5)
+        time.sleep(1)
 
     pixels.fill((0,0,0))
     pixels.show()
