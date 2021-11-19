@@ -1,0 +1,5 @@
+matplotlib==3.4.3
+numpy==1.21.4
+opencv-python==4.5.4.58
+adafruit-circuitpython-neopixel==6.2.3
+board==1.0
