@@ -53,7 +53,7 @@ class RotatingPlaneExample(TreeAnimator):
         return colors
 
 if __name__ == "__main__":
-    coords_path = "../data/coords.csv"
+    coords_path = "../data/test_coords.csv"
     anim = RotatingPlaneExample(coords_path)
 
     anim.animation_loop()

@@ -11,8 +11,8 @@ class LightsAnimator():
             reader = csv.reader(f)
             for row in reader:
                 # convert each row to 0
-                id, x, y = [int(e) for e in row]
-                z = 0
+                id, x, y, z = [int(e) for e in row]
+                # z = 0
                 self._coords.append((id, x, y, z))
 
         self.NUM_LIGHTS = len(self._coords)
