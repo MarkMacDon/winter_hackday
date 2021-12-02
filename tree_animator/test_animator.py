@@ -4,7 +4,7 @@ from tree_animator.animator import LightsAnimator
 
 
 class TestAnimator(LightsAnimator):
-    def __init__(self, coords_path):
+    def __init__(self, coords_path=None):
         # call the parent
         super().__init__(coords_path=coords_path)
 

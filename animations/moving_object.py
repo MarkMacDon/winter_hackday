@@ -48,7 +48,6 @@ class MovingObjectExample(TreeAnimator):
         return colors
 
 if __name__ == "__main__":
-    coords_path = "./coordinates/sample_coords.csv"
-    anim = MovingObjectExample(coords_path)
+    anim = MovingObjectExample()
 
     anim.animation_loop()

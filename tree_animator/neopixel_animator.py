@@ -11,7 +11,7 @@ pixel_pin = board.D18
 ORDER = neopixel.RGB
 
 class NeopixelAnimator(LightsAnimator):
-    def __init__(self, coords_path, brightness=1, num_pixels=500):
+    def __init__(self, coords_path=None, brightness=1, num_pixels=500):
         # call the parent
         super().__init__(coords_path=coords_path)
 

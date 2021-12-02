@@ -2,9 +2,15 @@ import csv
 from datetime import datetime
 
 import numpy as np
+import os
 
 class LightsAnimator():
-    def __init__(self, coords_path):
+    def __init__(self, coords_path=None):
+        # No coordinates were set, use the default coordinate
+        if coords_path is None:
+            # find the default coordinates relative to this file, this helps if we're all running with different working directories
+            coords_path = os.path.join(os.path.dirname(__file__), "../coordinates/sample_coords.csv")
+
         self._coords = []
         # read in the coordinates file
         with open(coords_path) as f:

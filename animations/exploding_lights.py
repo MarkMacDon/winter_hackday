@@ -38,7 +38,6 @@ class CenterExplodingExample(TreeAnimator):
         return colors
 
 if __name__ == "__main__":
-    coords_path = "./coordinates/sample_coords.csv"
-    anim = CenterExplodingExample(coords_path)
+    anim = CenterExplodingExample()
 
     anim.animation_loop()

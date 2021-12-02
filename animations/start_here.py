@@ -26,7 +26,6 @@ class MyFirstAnimator(TreeAnimator):
         return colors
 
 if __name__ == "__main__":
-    coords_path = "./coordinates/sample_coords.csv"
-    anim = MyFirstAnimator(coords_path)
+    anim = MyFirstAnimator()
 
     anim.animation_loop()
