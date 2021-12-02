@@ -25,7 +25,7 @@ def get_inheritors(klass, search_dir):
 if __name__ == "__main__":
     animation_classes = get_inheritors(TreeAnimator, "animations")
 
-    coords_path = "./data/test_coords.csv"
+    coords_path = "./coordinates/sample_coords.csv"
     animation_duration = 15
 
     for anim_class in itertools.cycle(animation_classes):
