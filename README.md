@@ -53,6 +53,12 @@ I have written a few examples of animations, hopefully these will give you an id
 python -m animations.spinning_lights
 ```
 
+#### single_animation.py
+If you are having problems running your script directly, the most common problem is the working directory isn't configured right. You can try using this file to run your animation instead, it works the same way as the demo_cycle, but only plays the animation you name in the command line
+
+```
+python single_animation.py name_of_your_animation
+```
 
 #### demo_cycle.py
 This will be used on the raspberry pi to cycle through the animations in the animations directory.
