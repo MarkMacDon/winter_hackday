@@ -9,6 +9,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Only run a single animation loop')
     parser.add_argument('animation_name', type=str,
                         help='name of the animation class you wish to run')
+    parser.add_argument('--coords', type=str,
+                        help='the location of a coordinates file')
 
     args = parser.parse_args()
 
@@ -39,5 +41,5 @@ if __name__ == "__main__":
         exit()
 
     print(f"Changing animation to {class_found.__name__}")
-    current_animation = class_found()
+    current_animation = class_found(coords_path=args.coords)
     current_animation.animation_loop()
