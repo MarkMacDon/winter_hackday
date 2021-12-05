@@ -8,7 +8,7 @@ from tree_animator import TreeAnimator
 from utils.color import hsv_to_rgb
 
 NUM_BANDS = 10
-NUM_COLORS = 3
+NUM_COLORS = 5
 ANIMATION_PERIOD = 3
 
 class MyFirstAnimator(TreeAnimator):
