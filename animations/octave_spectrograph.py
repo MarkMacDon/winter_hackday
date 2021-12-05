@@ -100,7 +100,7 @@ class FT():
         plt.show()
 
 
-class MyFirstAnimator(TreeAnimator):
+class SpectroAnim(TreeAnimator):
     def __init__(self, coords_path):
         super(MyFirstAnimator, self).__init__(coords_path)
         self.coords_path = coords_path
