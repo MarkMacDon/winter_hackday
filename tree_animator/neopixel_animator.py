@@ -21,7 +21,7 @@ class NeopixelAnimator(LightsAnimator):
     def _render_colors(self, colors):
         # assign each neopixel to the right color
         for i, color in enumerate(colors):
-            pixel_id = self._id_mapping[i]
+            pixel_id = int(self._id_mapping[i])
             self.neopixel[pixel_id] = color
 
         # broadcast the color changes to the string of LED lights
