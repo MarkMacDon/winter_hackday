@@ -1,5 +1,4 @@
 from datetime import datetime
-import matplotlib.pyplot as plt
 
 import numpy as np
 import math
@@ -8,10 +7,28 @@ from tree_animator import TreeAnimator
 from utils.color import hsv_to_rgb
 
 NUM_BANDS = 10
-NUM_COLORS = 5
 ANIMATION_PERIOD = 3
+# matplotlib doesn't work on the raspberry pi.
+# hardcoding the generated colormap
+"""
+import numpy as np
+import matplotlib.pyplot as plt
 
-class MyFirstAnimator(TreeAnimator):
+colormap = plt.get_cmap("winter")
+print("[")
+for i in np.linspace(0,1,5):
+    print("  {},".format(colormap(i)[0:3]))
+print("]")
+"""
+COLORMAP = [
+  (0.0, 0.0, 1.0),
+  (0.0, 0.25098039215686274, 0.8745098039215686),
+  (0.0, 0.5019607843137255, 0.7490196078431373),
+  (0.0, 0.7529411764705882, 0.6235294117647059),
+  (0.0, 1.0, 0.5),
+]
+
+class TopDownScanAnimator(TreeAnimator):
     def initialize_animation(self):
         # This function only gets called once at the start of the animation.
         # Do anything in here that is related to the setup of your animation, initializing variables, connecting to APIs, whatever
@@ -24,8 +41,6 @@ class MyFirstAnimator(TreeAnimator):
 
         print("Height (min/max/amp):", self.min_height, "/", self.max_height, "/", amp_height)
         print("Band height:", self.band_height)
-
-        self.colormap = plt.get_cmap("winter")
 
     def calculate_colors(self, xyz_coords, start_time):
         # this function gets called every few milliseconds, and it's purpose is to return the colors we want each light to be.
@@ -63,12 +78,13 @@ class MyFirstAnimator(TreeAnimator):
         
 
     def get_band_color(self, i):
-        cmap = self.colormap((i % NUM_COLORS) / NUM_COLORS)
+        num_colors = len(COLORMAP)
+        cmap = COLORMAP[i % num_colors]
         return (cmap[0]*255, cmap[1]*255, cmap[2]*255)
 
 
 
 if __name__ == "__main__":
-    anim = MyFirstAnimator()
+    anim = TopDownScanAnimator()
 
     anim.animation_loop()
