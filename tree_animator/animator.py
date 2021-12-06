@@ -56,7 +56,6 @@ class LightsAnimator():
 
     def _safe_calculate_colors(self, xyz_coords, start_time):
         colors = self.calculate_colors(xyz_coords, start_time)
-
         # check that we have the right number of colors for our number of pixels
         if not (colors.shape[0] == self.NUM_LIGHTS and colors.shape[1] == 3):
             raise Exception(f"number of colors returned ({colors.shape[0]}x{colors.shape[1]}) does not match the expected number of lights ({len(self._id_mapping)}x3")
